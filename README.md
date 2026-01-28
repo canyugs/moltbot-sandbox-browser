@@ -32,7 +32,7 @@ In your moltbot configuration (`clawdbot.json`):
 {
   "browser": {
     "enabled": true,
-    "cdpUrl": "http://moltbot-browser:9222",
+    "cdpUrl": "http://moltbot-sandbox-browser:9222",
     "attachOnly": true,
     "headless": true
   }

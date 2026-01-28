@@ -6,7 +6,7 @@ metadata:
 spec:
     description: |
       Headless Chromium browser sandbox that can be controlled via Chrome DevTools Protocol (CDP). Use this with moltbot or other services that need browser automation capabilities.
-    icon: https://raw.githubusercontent.com/AlaSQL/alasql/develop/src/icon/icon.svg
+    icon: https://raw.githubusercontent.com/moltbot/moltbot/main/docs/assets/pixel-lobster.svg
     tags:
       - Browser
       - Automation
@@ -29,7 +29,7 @@ spec:
       ## How to Connect
       Other services in the same Zeabur project can connect via:
       ```
-      http://moltbot-browser:9222
+      http://moltbot-sandbox-browser:9222
       ```
 
       ## CDP Endpoints
@@ -44,7 +44,7 @@ spec:
       {
         "browser": {
           "enabled": true,
-          "cdpUrl": "http://moltbot-browser:9222",
+          "cdpUrl": "http://moltbot-sandbox-browser:9222",
           "attachOnly": true
         }
       }
@@ -58,8 +58,8 @@ spec:
       - GitHub: https://github.com/canyugs/moltbot-sandbox-browser
 
     services:
-      - name: moltbot-browser
-        icon: https://raw.githubusercontent.com/AlaSQL/alasql/develop/src/icon/icon.svg
+      - name: moltbot-sandbox-browser
+        icon: https://raw.githubusercontent.com/moltbot/moltbot/main/docs/assets/pixel-lobster.svg
         template: PREBUILT
         spec:
           source:
@@ -96,7 +96,7 @@ localization:
       ## 連線方式
       同一個 Zeabur 專案中的其他服務可透過以下方式連線：
       ```
-      http://moltbot-browser:9222
+      http://moltbot-sandbox-browser:9222
       ```
 
       ## CDP 端點
@@ -111,7 +111,7 @@ localization:
       {
         "browser": {
           "enabled": true,
-          "cdpUrl": "http://moltbot-browser:9222",
+          "cdpUrl": "http://moltbot-sandbox-browser:9222",
           "attachOnly": true
         }
       }
@@ -141,7 +141,7 @@ localization:
       ## 连接方式
       同一个 Zeabur 项目中的其他服务可通过以下方式连接：
       ```
-      http://moltbot-browser:9222
+      http://moltbot-sandbox-browser:9222
       ```
 
       ## CDP 端点
@@ -156,7 +156,7 @@ localization:
       {
         "browser": {
           "enabled": true,
-          "cdpUrl": "http://moltbot-browser:9222",
+          "cdpUrl": "http://moltbot-sandbox-browser:9222",
           "attachOnly": true
         }
       }
