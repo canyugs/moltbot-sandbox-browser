@@ -1,0 +1,170 @@
+# yaml-language-server: $schema=https://schema.zeabur.app/template.json
+apiVersion: zeabur.com/v1
+kind: Template
+metadata:
+    name: moltbot Browser Sandbox
+spec:
+    description: |
+      Headless Chromium browser sandbox that can be controlled via Chrome DevTools Protocol (CDP). Use this with moltbot or other services that need browser automation capabilities.
+    icon: https://raw.githubusercontent.com/AlaSQL/alasql/develop/src/icon/icon.svg
+    tags:
+      - Browser
+      - Automation
+      - Chromium
+      - CDP
+    resourceUsage:
+      cpu: 1
+      memory: 1024
+
+    readme: |
+      # moltbot Browser Sandbox
+      A headless Chromium browser that can be controlled via Chrome DevTools Protocol (CDP).
+
+      ## Use Cases
+      - Browser automation with moltbot
+      - Web scraping
+      - Automated testing
+      - Screenshot services
+
+      ## How to Connect
+      Other services in the same Zeabur project can connect via:
+      ```
+      http://moltbot-browser:9222
+      ```
+
+      ## CDP Endpoints
+      - `GET /json/version` - Browser version info
+      - `GET /json/list` - List open tabs
+      - `GET /json/new?url=<url>` - Open new tab
+      - WebSocket connections for DevTools protocol
+
+      ## Configuration for moltbot
+      Add to your moltbot config (`clawdbot.json`):
+      ```json
+      {
+        "browser": {
+          "enabled": true,
+          "cdpUrl": "http://moltbot-browser:9222",
+          "attachOnly": true
+        }
+      }
+      ```
+
+      ## Resources
+      - **Recommended**: 1 vCPU, 1 GB RAM
+      - **Heavy usage**: 2 vCPU, 2 GB RAM
+
+      ## Documentation
+      - GitHub: https://github.com/zeabur/moltbot-sandbox-browser
+
+    services:
+      - name: moltbot-browser
+        icon: https://raw.githubusercontent.com/AlaSQL/alasql/develop/src/icon/icon.svg
+        template: PREBUILT
+        spec:
+          source:
+            image: ghcr.io/zeabur/moltbot-sandbox-browser:main
+          ports:
+          - id: cdp
+            port: 9222
+            type: TCP
+          healthCheck:
+            type: TCP
+            port: cdp
+          env:
+            CLAWDBOT_BROWSER_HEADLESS:
+              default: "1"
+            CLAWDBOT_BROWSER_CDP_PORT:
+              default: "9222"
+              readonly: true
+
+localization:
+  zh-TW:
+    name: moltbot 瀏覽器沙盒
+    description: |
+      無頭 Chromium 瀏覽器沙盒，可透過 Chrome DevTools Protocol (CDP) 控制。可搭配 moltbot 或其他需要瀏覽器自動化功能的服務使用。
+    readme: |
+      # moltbot 瀏覽器沙盒
+      可透過 Chrome DevTools Protocol (CDP) 控制的無頭 Chromium 瀏覽器。
+
+      ## 使用場景
+      - 搭配 moltbot 進行瀏覽器自動化
+      - 網頁爬蟲
+      - 自動化測試
+      - 截圖服務
+
+      ## 連線方式
+      同一個 Zeabur 專案中的其他服務可透過以下方式連線：
+      ```
+      http://moltbot-browser:9222
+      ```
+
+      ## CDP 端點
+      - `GET /json/version` - 瀏覽器版本資訊
+      - `GET /json/list` - 列出已開啟的分頁
+      - `GET /json/new?url=<url>` - 開啟新分頁
+      - WebSocket 連線用於 DevTools 協議
+
+      ## moltbot 設定
+      在 moltbot 設定檔 (`clawdbot.json`) 中加入：
+      ```json
+      {
+        "browser": {
+          "enabled": true,
+          "cdpUrl": "http://moltbot-browser:9222",
+          "attachOnly": true
+        }
+      }
+      ```
+
+      ## 資源需求
+      - **建議配置**：1 vCPU、1 GB RAM
+      - **大量使用**：2 vCPU、2 GB RAM
+
+      ## 文件
+      - GitHub：https://github.com/zeabur/moltbot-sandbox-browser
+
+  zh-CN:
+    name: moltbot 浏览器沙盒
+    description: |
+      无头 Chromium 浏览器沙盒，可通过 Chrome DevTools Protocol (CDP) 控制。可搭配 moltbot 或其他需要浏览器自动化功能的服务使用。
+    readme: |
+      # moltbot 浏览器沙盒
+      可通过 Chrome DevTools Protocol (CDP) 控制的无头 Chromium 浏览器。
+
+      ## 使用场景
+      - 搭配 moltbot 进行浏览器自动化
+      - 网页爬虫
+      - 自动化测试
+      - 截图服务
+
+      ## 连接方式
+      同一个 Zeabur 项目中的其他服务可通过以下方式连接：
+      ```
+      http://moltbot-browser:9222
+      ```
+
+      ## CDP 端点
+      - `GET /json/version` - 浏览器版本信息
+      - `GET /json/list` - 列出已打开的标签页
+      - `GET /json/new?url=<url>` - 打开新标签页
+      - WebSocket 连接用于 DevTools 协议
+
+      ## moltbot 配置
+      在 moltbot 配置文件 (`clawdbot.json`) 中添加：
+      ```json
+      {
+        "browser": {
+          "enabled": true,
+          "cdpUrl": "http://moltbot-browser:9222",
+          "attachOnly": true
+        }
+      }
+      ```
+
+      ## 资源需求
+      - **建议配置**：1 vCPU、1 GB RAM
+      - **大量使用**：2 vCPU、2 GB RAM
+
+      ## 文档
+      - GitHub：https://github.com/zeabur/moltbot-sandbox-browser
