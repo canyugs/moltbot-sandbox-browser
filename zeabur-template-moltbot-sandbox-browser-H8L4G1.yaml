@@ -46,9 +46,9 @@ spec:
         "browser": {
           "enabled": true,
           "attachOnly": true,
-          "defaultProfile": "clawd",
+          "defaultProfile": "sandbox",
           "profiles": {
-            "clawd": {
+            "sandbox": {
               "cdpUrl": "http://moltbot-sandbox-browser:9222",
               "color": "#FF4500"
             }
@@ -59,8 +59,10 @@ spec:
 
       **Option 2: CLI command**:
       ```bash
-      moltbot browser create-profile --name clawd --cdp-url http://moltbot-sandbox-browser:9222 --color "#FF4500"
+      moltbot browser create-profile --name sandbox --cdp-url http://moltbot-sandbox-browser:9222 --color "#FF4500"
       ```
+
+      > Note: The default profile `clawd` is for local browser. Use `sandbox` for the remote browser sandbox.
 
       ## Resources
       - **Recommended**: 1 vCPU, 1 GB RAM
@@ -132,9 +134,9 @@ localization:
         "browser": {
           "enabled": true,
           "attachOnly": true,
-          "defaultProfile": "clawd",
+          "defaultProfile": "sandbox",
           "profiles": {
-            "clawd": {
+            "sandbox": {
               "cdpUrl": "http://moltbot-sandbox-browser:9222",
               "color": "#FF4500"
             }
@@ -145,8 +147,10 @@ localization:
 
       **方式二：CLI 命令**：
       ```bash
-      moltbot browser create-profile --name clawd --cdp-url http://moltbot-sandbox-browser:9222 --color "#FF4500"
+      moltbot browser create-profile --name sandbox --cdp-url http://moltbot-sandbox-browser:9222 --color "#FF4500"
       ```
+
+      > 注意：預設的 `clawd` profile 是本地瀏覽器。使用 `sandbox` 來連接遠端瀏覽器沙盒。
 
       ## 資源需求
       - **建議配置**：1 vCPU、1 GB RAM
@@ -196,9 +200,9 @@ localization:
         "browser": {
           "enabled": true,
           "attachOnly": true,
-          "defaultProfile": "clawd",
+          "defaultProfile": "sandbox",
           "profiles": {
-            "clawd": {
+            "sandbox": {
               "cdpUrl": "http://moltbot-sandbox-browser:9222",
               "color": "#FF4500"
             }
@@ -209,8 +213,10 @@ localization:
 
       **方式二：CLI 命令**：
       ```bash
-      moltbot browser create-profile --name clawd --cdp-url http://moltbot-sandbox-browser:9222 --color "#FF4500"
+      moltbot browser create-profile --name sandbox --cdp-url http://moltbot-sandbox-browser:9222 --color "#FF4500"
       ```
+
+      > 注意：默认的 `clawd` profile 是本地浏览器。使用 `sandbox` 来连接远端浏览器沙盒。
 
       ## 资源需求
       - **建议配置**：1 vCPU、1 GB RAM
@@ -260,9 +266,9 @@ localization:
         "browser": {
           "enabled": true,
           "attachOnly": true,
-          "defaultProfile": "clawd",
+          "defaultProfile": "sandbox",
           "profiles": {
-            "clawd": {
+            "sandbox": {
               "cdpUrl": "http://moltbot-sandbox-browser:9222",
               "color": "#FF4500"
             }
@@ -273,8 +279,10 @@ localization:
 
       **方法2：CLI コマンド**：
       ```bash
-      moltbot browser create-profile --name clawd --cdp-url http://moltbot-sandbox-browser:9222 --color "#FF4500"
+      moltbot browser create-profile --name sandbox --cdp-url http://moltbot-sandbox-browser:9222 --color "#FF4500"
       ```
+
+      > 注意：デフォルトの `clawd` プロファイルはローカルブラウザ用です。リモートブラウザサンドボックスには `sandbox` を使用してください。
 
       ## リソース要件
       - **推奨構成**：1 vCPU、1 GB RAM
@@ -324,9 +332,9 @@ localization:
         "browser": {
           "enabled": true,
           "attachOnly": true,
-          "defaultProfile": "clawd",
+          "defaultProfile": "sandbox",
           "profiles": {
-            "clawd": {
+            "sandbox": {
               "cdpUrl": "http://moltbot-sandbox-browser:9222",
               "color": "#FF4500"
             }
@@ -337,8 +345,10 @@ localization:
 
       **Opsi 2: Perintah CLI**:
       ```bash
-      moltbot browser create-profile --name clawd --cdp-url http://moltbot-sandbox-browser:9222 --color "#FF4500"
+      moltbot browser create-profile --name sandbox --cdp-url http://moltbot-sandbox-browser:9222 --color "#FF4500"
       ```
+
+      > Catatan: Profil default `clawd` adalah untuk browser lokal. Gunakan `sandbox` untuk browser sandbox remote.
 
       ## Kebutuhan Sumber Daya
       - **Rekomendasi**: 1 vCPU, 1 GB RAM
@@ -388,9 +398,9 @@ localization:
         "browser": {
           "enabled": true,
           "attachOnly": true,
-          "defaultProfile": "clawd",
+          "defaultProfile": "sandbox",
           "profiles": {
-            "clawd": {
+            "sandbox": {
               "cdpUrl": "http://moltbot-sandbox-browser:9222",
               "color": "#FF4500"
             }
@@ -401,8 +411,10 @@ localization:
 
       **Opción 2: Comando CLI**:
       ```bash
-      moltbot browser create-profile --name clawd --cdp-url http://moltbot-sandbox-browser:9222 --color "#FF4500"
+      moltbot browser create-profile --name sandbox --cdp-url http://moltbot-sandbox-browser:9222 --color "#FF4500"
       ```
+
+      > Nota: El perfil predeterminado `clawd` es para el navegador local. Use `sandbox` para el sandbox de navegador remoto.
 
       ## Recursos
       - **Recomendado**: 1 vCPU, 1 GB RAM
