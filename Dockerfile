@@ -19,18 +19,20 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 # Configure nginx as reverse proxy to rewrite Host header
-RUN echo 'server { \n\
-    listen 9222; \n\
-    location / { \n\
-        proxy_pass http://127.0.0.1:9223; \n\
-        proxy_http_version 1.1; \n\
-        proxy_set_header Host localhost; \n\
-        proxy_set_header Upgrade $http_upgrade; \n\
-        proxy_set_header Connection "upgrade"; \n\
-    } \n\
-}' > /etc/nginx/sites-available/cdp-proxy \
-  && ln -sf /etc/nginx/sites-available/cdp-proxy /etc/nginx/sites-enabled/ \
-  && rm -f /etc/nginx/sites-enabled/default
+RUN echo 'worker_processes 1;\n\
+events { worker_connections 64; }\n\
+http {\n\
+    server {\n\
+        listen 9222;\n\
+        location / {\n\
+            proxy_pass http://127.0.0.1:9223;\n\
+            proxy_http_version 1.1;\n\
+            proxy_set_header Host localhost;\n\
+            proxy_set_header Upgrade $http_upgrade;\n\
+            proxy_set_header Connection "upgrade";\n\
+        }\n\
+    }\n\
+}' > /etc/nginx/nginx.conf
 
 # Create non-root user for security
 RUN useradd -m -s /bin/bash browser
