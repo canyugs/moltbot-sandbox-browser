@@ -40,31 +40,45 @@ spec:
 
       ## Configuration for moltbot
 
-      **Option 1: CLI commands** (via Zeabur Command):
-      ```bash
-      moltbot config set browser.enabled true
-      moltbot config set browser.attachOnly true
-      moltbot config set browser.profiles.clawd.color "#E44D26"
-      moltbot config set browser.profiles.clawd.cdpUrl "http://moltbot-sandbox-browser:9222"
-      ```
-
-      **Option 2: Edit config file** - Add to `moltbot.json`:
+      **Option 1: Edit config file via Zeabur Files**
+      1. Go to Zeabur dashboard and open your **moltbot** service
+      2. Click **Files** to open the file manager
+      3. Navigate to `/home/node/.clawdbot/clawdbot.json`
+      4. Add the browser configuration (merge with existing config):
       ```json
-      {
-        "browser": {
-          "enabled": true,
-          "attachOnly": true,
-          "profiles": {
-            "clawd": {
-              "cdpUrl": "http://moltbot-sandbox-browser:9222",
-              "color": "#E44D26"
-            }
+      "browser": {
+        "enabled": true,
+        "attachOnly": true,
+        "profiles": {
+          "clawd": {
+            "cdpUrl": "http://moltbot-sandbox-browser:9222",
+            "color": "#E44D26"
           }
         }
       }
       ```
+      5. Save the file and restart the moltbot service
 
-      Restart the gateway to apply changes.
+      **Option 2: moltbot Web UI**
+      1. Open moltbot Web UI (click the domain link in Zeabur dashboard)
+      2. Go to **Settings** page
+      3. Find **Browser** section and enable **Browser Tool**
+      4. Enable **Attach Only** mode
+      5. Expand **Profiles** section and click **+ Add Entry**
+      6. Fill in the profile settings:
+         - Profile name: `clawd`
+         - **Cdp Url**: `http://moltbot-sandbox-browser:9222`
+         - **Color**: `#E44D26` (optional)
+      7. Save settings - changes apply automatically
+
+      ## Browser Configuration Options
+      | Option | Description |
+      |--------|-------------|
+      | `browser.enabled` | Enable browser tool (required) |
+      | `browser.attachOnly` | Use external browser instead of launching (required for this sandbox) |
+      | `browser.profiles.<name>.cdpUrl` | CDP endpoint URL |
+      | `browser.profiles.<name>.color` | Browser profile indicator color |
+      | `browser.profiles.<name>.userDataDir` | Custom user data directory (optional) |
 
       ## Resources
       - **Recommended**: 1 vCPU, 1 GB RAM
@@ -131,31 +145,45 @@ localization:
 
       ## moltbot 設定
 
-      **方式一：CLI 指令**（透過 Zeabur 指令）：
-      ```bash
-      moltbot config set browser.enabled true
-      moltbot config set browser.attachOnly true
-      moltbot config set browser.profiles.clawd.color "#E44D26"
-      moltbot config set browser.profiles.clawd.cdpUrl "http://moltbot-sandbox-browser:9222"
-      ```
-
-      **方式二：編輯設定檔** - 在 `moltbot.json` 中加入：
+      **方式一：透過 Zeabur 檔案功能編輯設定檔**
+      1. 前往 Zeabur 控制台，開啟您的 **moltbot** 服務
+      2. 點擊**檔案**開啟檔案管理
+      3. 找到 `/home/node/.clawdbot/clawdbot.json`
+      4. 加入瀏覽器設定（與現有設定合併）：
       ```json
-      {
-        "browser": {
-          "enabled": true,
-          "attachOnly": true,
-          "profiles": {
-            "clawd": {
-              "cdpUrl": "http://moltbot-sandbox-browser:9222",
-              "color": "#E44D26"
-            }
+      "browser": {
+        "enabled": true,
+        "attachOnly": true,
+        "profiles": {
+          "clawd": {
+            "cdpUrl": "http://moltbot-sandbox-browser:9222",
+            "color": "#E44D26"
           }
         }
       }
       ```
+      5. 儲存檔案並重新啟動 moltbot 服務
 
-      完成後重新啟動 gateway 以套用設定。
+      **方式二：moltbot Web UI**
+      1. 開啟 moltbot Web UI（點擊 Zeabur 控制台中的網域連結）
+      2. 前往 **Settings** 頁面
+      3. 找到 **Browser** 區塊並啟用 **Browser Tool**
+      4. 啟用 **Attach Only** 模式
+      5. 展開 **Profiles** 區塊並點擊 **+ Add Entry**
+      6. 填入設定檔資訊：
+         - 設定檔名稱：`clawd`
+         - **Cdp Url**：`http://moltbot-sandbox-browser:9222`
+         - **Color**：`#E44D26`（選填）
+      7. 儲存設定 - 變更會自動套用
+
+      ## 瀏覽器設定選項
+      | 選項 | 說明 |
+      |------|------|
+      | `browser.enabled` | 啟用瀏覽器工具（必要） |
+      | `browser.attachOnly` | 使用外部瀏覽器而非自行啟動（此沙盒必要） |
+      | `browser.profiles.<名稱>.cdpUrl` | CDP 端點 URL |
+      | `browser.profiles.<名稱>.color` | 瀏覽器設定檔指示顏色 |
+      | `browser.profiles.<名稱>.userDataDir` | 自訂使用者資料目錄（選填） |
 
       ## 資源需求
       - **建議配置**：1 vCPU、1 GB RAM
@@ -200,31 +228,45 @@ localization:
 
       ## moltbot 配置
 
-      **方式一：CLI 命令**（通过 Zeabur 命令）：
-      ```bash
-      moltbot config set browser.enabled true
-      moltbot config set browser.attachOnly true
-      moltbot config set browser.profiles.clawd.color "#E44D26"
-      moltbot config set browser.profiles.clawd.cdpUrl "http://moltbot-sandbox-browser:9222"
-      ```
-
-      **方式二：编辑配置文件** - 在 `moltbot.json` 中添加：
+      **方式一：通过 Zeabur 文件功能编辑配置文件**
+      1. 前往 Zeabur 控制台，打开您的 **moltbot** 服务
+      2. 点击**文件**打开文件管理
+      3. 找到 `/home/node/.clawdbot/clawdbot.json`
+      4. 添加浏览器配置（与现有配置合并）：
       ```json
-      {
-        "browser": {
-          "enabled": true,
-          "attachOnly": true,
-          "profiles": {
-            "clawd": {
-              "cdpUrl": "http://moltbot-sandbox-browser:9222",
-              "color": "#E44D26"
-            }
+      "browser": {
+        "enabled": true,
+        "attachOnly": true,
+        "profiles": {
+          "clawd": {
+            "cdpUrl": "http://moltbot-sandbox-browser:9222",
+            "color": "#E44D26"
           }
         }
       }
       ```
+      5. 保存文件并重新启动 moltbot 服务
 
-      完成后重新启动 gateway 以应用设置。
+      **方式二：moltbot Web UI**
+      1. 打开 moltbot Web UI（点击 Zeabur 控制台中的域名链接）
+      2. 前往 **Settings** 页面
+      3. 找到 **Browser** 区块并启用 **Browser Tool**
+      4. 启用 **Attach Only** 模式
+      5. 展开 **Profiles** 区块并点击 **+ Add Entry**
+      6. 填入配置文件信息：
+         - 配置文件名称：`clawd`
+         - **Cdp Url**：`http://moltbot-sandbox-browser:9222`
+         - **Color**：`#E44D26`（选填）
+      7. 保存设置 - 变更会自动应用
+
+      ## 浏览器配置选项
+      | 选项 | 说明 |
+      |------|------|
+      | `browser.enabled` | 启用浏览器工具（必要） |
+      | `browser.attachOnly` | 使用外部浏览器而非自行启动（此沙盒必要） |
+      | `browser.profiles.<名称>.cdpUrl` | CDP 端点 URL |
+      | `browser.profiles.<名称>.color` | 浏览器配置文件指示颜色 |
+      | `browser.profiles.<名称>.userDataDir` | 自定义用户数据目录（选填） |
 
       ## 资源需求
       - **建议配置**：1 vCPU、1 GB RAM
@@ -269,31 +311,45 @@ localization:
 
       ## moltbot 設定
 
-      **方法1：CLI コマンド**（Zeabur コマンド経由）：
-      ```bash
-      moltbot config set browser.enabled true
-      moltbot config set browser.attachOnly true
-      moltbot config set browser.profiles.clawd.color "#E44D26"
-      moltbot config set browser.profiles.clawd.cdpUrl "http://moltbot-sandbox-browser:9222"
-      ```
-
-      **方法2：設定ファイルを編集** - `moltbot.json` に追加：
+      **方法1：Zeabur ファイル機能で設定ファイルを編集**
+      1. Zeabur ダッシュボードで **moltbot** サービスを開く
+      2. **ファイル**をクリックしてファイルマネージャーを開く
+      3. `/home/node/.clawdbot/clawdbot.json` を見つける
+      4. ブラウザ設定を追加（既存の設定とマージ）：
       ```json
-      {
-        "browser": {
-          "enabled": true,
-          "attachOnly": true,
-          "profiles": {
-            "clawd": {
-              "cdpUrl": "http://moltbot-sandbox-browser:9222",
-              "color": "#E44D26"
-            }
+      "browser": {
+        "enabled": true,
+        "attachOnly": true,
+        "profiles": {
+          "clawd": {
+            "cdpUrl": "http://moltbot-sandbox-browser:9222",
+            "color": "#E44D26"
           }
         }
       }
       ```
+      5. ファイルを保存して moltbot サービスを再起動
 
-      完了後、gateway を再起動して設定を適用してください。
+      **方法2：moltbot Web UI**
+      1. moltbot Web UI を開く（Zeabur ダッシュボードでドメインリンクをクリック）
+      2. **Settings** ページに移動
+      3. **Browser** セクションを見つけて **Browser Tool** を有効化
+      4. **Attach Only** モードを有効化
+      5. **Profiles** セクションを展開して **+ Add Entry** をクリック
+      6. プロファイル設定を入力：
+         - プロファイル名：`clawd`
+         - **Cdp Url**：`http://moltbot-sandbox-browser:9222`
+         - **Color**：`#E44D26`（任意）
+      7. 設定を保存 - 変更は自動的に適用されます
+
+      ## ブラウザ設定オプション
+      | オプション | 説明 |
+      |------------|------|
+      | `browser.enabled` | ブラウザツールを有効化（必須） |
+      | `browser.attachOnly` | 自身で起動せず外部ブラウザを使用（このサンドボックスでは必須） |
+      | `browser.profiles.<名前>.cdpUrl` | CDP エンドポイント URL |
+      | `browser.profiles.<名前>.color` | ブラウザプロファイルのインジケーター色 |
+      | `browser.profiles.<名前>.userDataDir` | カスタムユーザーデータディレクトリ（任意） |
 
       ## リソース要件
       - **推奨構成**：1 vCPU、1 GB RAM
@@ -338,31 +394,45 @@ localization:
 
       ## Konfigurasi untuk moltbot
 
-      **Opsi 1: Perintah CLI** (melalui Zeabur Command):
-      ```bash
-      moltbot config set browser.enabled true
-      moltbot config set browser.attachOnly true
-      moltbot config set browser.profiles.clawd.color "#E44D26"
-      moltbot config set browser.profiles.clawd.cdpUrl "http://moltbot-sandbox-browser:9222"
-      ```
-
-      **Opsi 2: Edit file konfigurasi** - Tambahkan ke `moltbot.json`:
+      **Opsi 1: Edit file konfigurasi via Zeabur Files**
+      1. Buka dashboard Zeabur dan buka layanan **moltbot** Anda
+      2. Klik **Files** untuk membuka file manager
+      3. Temukan `/home/node/.clawdbot/clawdbot.json`
+      4. Tambahkan konfigurasi browser (gabungkan dengan konfigurasi yang ada):
       ```json
-      {
-        "browser": {
-          "enabled": true,
-          "attachOnly": true,
-          "profiles": {
-            "clawd": {
-              "cdpUrl": "http://moltbot-sandbox-browser:9222",
-              "color": "#E44D26"
-            }
+      "browser": {
+        "enabled": true,
+        "attachOnly": true,
+        "profiles": {
+          "clawd": {
+            "cdpUrl": "http://moltbot-sandbox-browser:9222",
+            "color": "#E44D26"
           }
         }
       }
       ```
+      5. Simpan file dan restart layanan moltbot
 
-      Setelah selesai, restart gateway untuk menerapkan pengaturan.
+      **Opsi 2: moltbot Web UI**
+      1. Buka moltbot Web UI (klik tautan domain di dashboard Zeabur)
+      2. Buka halaman **Settings**
+      3. Temukan bagian **Browser** dan aktifkan **Browser Tool**
+      4. Aktifkan mode **Attach Only**
+      5. Perluas bagian **Profiles** dan klik **+ Add Entry**
+      6. Isi pengaturan profil:
+         - Nama profil: `clawd`
+         - **Cdp Url**: `http://moltbot-sandbox-browser:9222`
+         - **Color**: `#E44D26` (opsional)
+      7. Simpan pengaturan - perubahan diterapkan secara otomatis
+
+      ## Opsi Konfigurasi Browser
+      | Opsi | Deskripsi |
+      |------|-----------|
+      | `browser.enabled` | Aktifkan browser tool (wajib) |
+      | `browser.attachOnly` | Gunakan browser eksternal alih-alih meluncurkan sendiri (wajib untuk sandbox ini) |
+      | `browser.profiles.<nama>.cdpUrl` | URL endpoint CDP |
+      | `browser.profiles.<nama>.color` | Warna indikator profil browser |
+      | `browser.profiles.<nama>.userDataDir` | Direktori data pengguna kustom (opsional) |
 
       ## Kebutuhan Sumber Daya
       - **Rekomendasi**: 1 vCPU, 1 GB RAM
@@ -407,31 +477,45 @@ localization:
 
       ## Configuración para moltbot
 
-      **Opción 1: Comandos CLI** (vía Zeabur Command):
-      ```bash
-      moltbot config set browser.enabled true
-      moltbot config set browser.attachOnly true
-      moltbot config set browser.profiles.clawd.color "#E44D26"
-      moltbot config set browser.profiles.clawd.cdpUrl "http://moltbot-sandbox-browser:9222"
-      ```
-
-      **Opción 2: Editar archivo de configuración** - Agregar a `moltbot.json`:
+      **Opción 1: Editar archivo de configuración via Zeabur Files**
+      1. Vaya al panel de Zeabur y abra su servicio **moltbot**
+      2. Haga clic en **Files** para abrir el administrador de archivos
+      3. Navegue a `/home/node/.clawdbot/clawdbot.json`
+      4. Agregue la configuración del navegador (combine con la configuración existente):
       ```json
-      {
-        "browser": {
-          "enabled": true,
-          "attachOnly": true,
-          "profiles": {
-            "clawd": {
-              "cdpUrl": "http://moltbot-sandbox-browser:9222",
-              "color": "#E44D26"
-            }
+      "browser": {
+        "enabled": true,
+        "attachOnly": true,
+        "profiles": {
+          "clawd": {
+            "cdpUrl": "http://moltbot-sandbox-browser:9222",
+            "color": "#E44D26"
           }
         }
       }
       ```
+      5. Guarde el archivo y reinicie el servicio moltbot
 
-      Después, reinicie el gateway para aplicar los cambios.
+      **Opción 2: moltbot Web UI**
+      1. Abra moltbot Web UI (haga clic en el enlace del dominio en el panel de Zeabur)
+      2. Vaya a la página **Settings**
+      3. Encuentre la sección **Browser** y habilite **Browser Tool**
+      4. Habilite el modo **Attach Only**
+      5. Expanda la sección **Profiles** y haga clic en **+ Add Entry**
+      6. Complete la configuración del perfil:
+         - Nombre del perfil: `clawd`
+         - **Cdp Url**: `http://moltbot-sandbox-browser:9222`
+         - **Color**: `#E44D26` (opcional)
+      7. Guarde la configuración - los cambios se aplican automáticamente
+
+      ## Opciones de Configuración del Navegador
+      | Opción | Descripción |
+      |--------|-------------|
+      | `browser.enabled` | Habilitar herramienta de navegador (requerido) |
+      | `browser.attachOnly` | Usar navegador externo en lugar de lanzar uno (requerido para este sandbox) |
+      | `browser.profiles.<nombre>.cdpUrl` | URL del endpoint CDP |
+      | `browser.profiles.<nombre>.color` | Color indicador del perfil del navegador |
+      | `browser.profiles.<nombre>.userDataDir` | Directorio de datos de usuario personalizado (opcional) |
 
       ## Recursos
       - **Recomendado**: 1 vCPU, 1 GB RAM
