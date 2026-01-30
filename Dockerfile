@@ -1,7 +1,7 @@
 FROM debian:bookworm-slim
 
 LABEL org.opencontainers.image.source="https://github.com/canyugs/moltbot-sandbox-browser"
-LABEL org.opencontainers.image.description="Headless Chromium browser sandbox for moltbot"
+LABEL org.opencontainers.image.description="Headless Chromium browser sandbox for OpenClaw"
 LABEL org.opencontainers.image.licenses="MIT"
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -15,34 +15,19 @@ RUN apt-get update \
     fonts-liberation \
     fonts-noto-color-emoji \
     fonts-noto-cjk \
-    nginx \
+    git \
+    jq \
+    novnc \
+    python3 \
+    socat \
+    websockify \
+    x11vnc \
+    xvfb \
   && rm -rf /var/lib/apt/lists/*
 
-# Configure nginx as reverse proxy to rewrite Host header
-RUN echo 'worker_processes 1;\n\
-events { worker_connections 64; }\n\
-http {\n\
-    server {\n\
-        listen 9222;\n\
-        location / {\n\
-            proxy_pass http://127.0.0.1:9223;\n\
-            proxy_http_version 1.1;\n\
-            proxy_set_header Host localhost;\n\
-            proxy_set_header Upgrade $http_upgrade;\n\
-            proxy_set_header Connection "upgrade";\n\
-        }\n\
-    }\n\
-}' > /etc/nginx/nginx.conf
+COPY entrypoint.sh /usr/local/bin/openclaw-sandbox-browser
+RUN chmod +x /usr/local/bin/openclaw-sandbox-browser
 
-# Create non-root user for security
-RUN useradd -m -s /bin/bash browser
+EXPOSE 9222 5900 6080
 
-COPY entrypoint.sh /usr/local/bin/moltbot-sandbox-browser
-RUN chmod +x /usr/local/bin/moltbot-sandbox-browser
-
-USER browser
-WORKDIR /home/browser
-
-EXPOSE 9222
-
-CMD ["moltbot-sandbox-browser"]
+CMD ["openclaw-sandbox-browser"]
