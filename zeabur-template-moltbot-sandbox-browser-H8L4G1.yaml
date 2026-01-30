@@ -43,7 +43,7 @@ spec:
       **Option 1: Edit config file via Zeabur Files**
       1. Go to Zeabur dashboard and open your **moltbot** service
       2. Click **Files** to open the file manager
-      3. Navigate to `/home/node/.clawdbot/clawdbot.json`
+      3. Navigate to `/home/node/.clawdbot/moltbot.json`
       4. Add the browser configuration (merge with existing config):
       ```json
       "browser": {
@@ -148,7 +148,7 @@ localization:
       **方式一：透過 Zeabur 檔案功能編輯設定檔**
       1. 前往 Zeabur 控制台，開啟您的 **moltbot** 服務
       2. 點擊**檔案**開啟檔案管理
-      3. 找到 `/home/node/.clawdbot/clawdbot.json`
+      3. 找到 `/home/node/.clawdbot/moltbot.json`
       4. 加入瀏覽器設定（與現有設定合併）：
       ```json
       "browser": {
@@ -231,7 +231,7 @@ localization:
       **方式一：通过 Zeabur 文件功能编辑配置文件**
       1. 前往 Zeabur 控制台，打开您的 **moltbot** 服务
       2. 点击**文件**打开文件管理
-      3. 找到 `/home/node/.clawdbot/clawdbot.json`
+      3. 找到 `/home/node/.clawdbot/moltbot.json`
       4. 添加浏览器配置（与现有配置合并）：
       ```json
       "browser": {
@@ -314,7 +314,7 @@ localization:
       **方法1：Zeabur ファイル機能で設定ファイルを編集**
       1. Zeabur ダッシュボードで **moltbot** サービスを開く
       2. **ファイル**をクリックしてファイルマネージャーを開く
-      3. `/home/node/.clawdbot/clawdbot.json` を見つける
+      3. `/home/node/.clawdbot/moltbot.json` を見つける
       4. ブラウザ設定を追加（既存の設定とマージ）：
       ```json
       "browser": {
@@ -397,7 +397,7 @@ localization:
       **Opsi 1: Edit file konfigurasi via Zeabur Files**
       1. Buka dashboard Zeabur dan buka layanan **moltbot** Anda
       2. Klik **Files** untuk membuka file manager
-      3. Temukan `/home/node/.clawdbot/clawdbot.json`
+      3. Temukan `/home/node/.clawdbot/moltbot.json`
       4. Tambahkan konfigurasi browser (gabungkan dengan konfigurasi yang ada):
       ```json
       "browser": {
@@ -480,7 +480,7 @@ localization:
       **Opción 1: Editar archivo de configuración via Zeabur Files**
       1. Vaya al panel de Zeabur y abra su servicio **moltbot**
       2. Haga clic en **Files** para abrir el administrador de archivos
-      3. Navegue a `/home/node/.clawdbot/clawdbot.json`
+      3. Navegue a `/home/node/.clawdbot/moltbot.json`
       4. Agregue la configuración del navegador (combine con la configuración existente):
       ```json
       "browser": {
